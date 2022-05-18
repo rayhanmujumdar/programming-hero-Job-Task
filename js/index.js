@@ -63,14 +63,24 @@ const duplicatesCount = function(arr) {
             duplicate.push(arr[arrayIndex])
         }
     }
-    return {
-        duplicate,
-        duplicateCount: duplicate.length
-    }
+    return duplicate.length
 }
 console.log(duplicatesCount(arr2))
 
 // task: 3 -> How to find unique values from an array in sorted order?
 
-const arr = [1, 5, 7, 44, 5, 9, 4, 5, 9, 10, 6, 7, 8]
+const arr3 = [1, 5, 7, 44, 5, 9, 4, 5, 9, 10, 6, 7, 8]
 
+const uniqueValue = function (arr) {
+    const uniqueNum = []
+    for (let arrayIndex = 0; arrayIndex < arr.length; arrayIndex++) {
+        if (arr.indexOf(arr[arrayIndex]) === arrayIndex) {
+            uniqueNum.push(arr[arrayIndex])
+        }
+    }
+    const uniqueSortNum = uniqueNum.sort(function (a, b) {
+        return a - b
+    })
+    return uniqueSortNum
+}
+console.log(uniqueValue(arr3))
